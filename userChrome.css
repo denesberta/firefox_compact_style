@@ -1,0 +1,193 @@
+
+/* Removes empty square on the left side of the tabs */
+#TabsToolbar .titlebar-spacer[type="pre-tabs"]{
+	display: none !important; 
+} 
+
+/* Rouned Tabs */
+.tab-background,
+.tab-loading-burst {
+border: none !important;
+border-top-left-radius: 5px !important;
+border-top-right-radius: 5px !important;
+}
+
+/* Removes lines on selected/hovered tabs */
+.tab-line { display: none !important; }
+
+/* Removes line in between tabs */
+.tabbrowser-tab::before, 
+.tabbrowser-tab::after{
+  display: none !important;
+}
+
+/* Rounded URL-bar */
+/*
+#urlbar-background {
+	border-radius: 5px !important;
+}
+*/
+
+/* Rounded expanded URL-bar */
+/*
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+	border-radius: 5px !important;
+}
+*/
+
+.urlbarView {
+	
+}
+
+.urlbarView-row[type=bookmark] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
+	margin-left: -10px !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistbox {
+  width:10% !important; /* for ESR52, not Quantum */
+}
+
+/* Context buttons */
+:root{
+	--proton-tab-block-margin: 0px !important;
+}
+
+/* Comment the following out if you are using the light theme: */
+
+#screenshots_mozilla_org-menuitem-_create-screenshot > .menu-iconic-left
+{
+	filter: invert(1) !important;
+}
+
+/* Hide buttons **/
+*|*:root:not([customizing]) #nav-bar #nav-bar-customization-target toolbarbutton:not([customizing]) {
+	margin-left: calc(-2 * var(--toolbarbutton-inner-padding) - 16px - (2 * var(--toolbarbutton-outer-padding))) !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	transition: all 100ms var(--animation-easing-function) !important;
+}
+
+/* Show on hover or focus */
+*|*:root:not([customizing]) :hover > #nav-bar toolbarbutton,
+*|*:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
+*|*:root:not([customizing]) :hover > #titlebar toolbarbutton {
+	margin-left: 0 !important;
+	opacity: 1 !important;
+	pointer-events: auto !important;
+}
+
+
+/* Don't hide tab buttons */
+*|*:root:not([customizing]) :hover > #titlebar #TabsToolbar toolbarbutton {
+	margin-left: 0px !important;
+	opacity: 1 !important;
+	pointer-events: auto !important;
+}
+
+/* Disable padding on urlbar */
+*|*:root:not([customizing]) #navigator-toolbox #nav-bar #urlbar-container {
+	margin-inline: 0 !important;
+	padding-block: 0 !important;
+}
+
+/* Hide controls on urlbar focus */
+*|*:root:not([customizing]) #navigator-toolbox #nav-bar #nav-bar-customization-target:focus-within ~ toolbarbutton,
+*|*:root:not([customizing]) #navigator-toolbox #nav-bar #nav-bar-customization-target:focus-within ~ toolbaritem {
+	display: none !important;
+}
+
+*|*:root:not([customizing]) #navigator-toolbox #nav-bar #urlbar-container:focus-within {
+	margin-right: -65vw !important;
+}
+
+*|*:root:not([customizing]) #navigator-toolbox #nav-bar #urlbar-container:focus-within #page-action-buttons {
+	display: -moz-box !important;
+}
+
+
+/* Remove styles from urlbar */
+*|*:root:not([customizing]) #urlbar.megabar > #urlbar-background {
+	border-radius: 0 !important;
+}
+
+*|*:root:not([customizing]) #urlbar-input-container,
+*|*:root:not([customizing]) #urlbar-background {
+	border: none !important;;
+	border-radius: 0 !important;
+}
+
+*|*:root:not([customizing]) #urlbar {
+	top: 0 !important;
+	min-height: var(--tab-min-height) !important;
+}
+
+*|*:root:not([customizing]) #urlbar-container {
+	min-height: var(--tab-min-height) !important;
+	min-width: 150px !important;
+}
+
+
+/* Hide URL bar buttons */
+/*
+*|*:root:not([customizing]) #page-action-buttons {
+	display: none !important;
+}
+*/
+
+/*Hide unnecessary extension buttons*/
+image[tooltiptext="Toggle page rendering with XV plugin"]{
+	display: none !important;
+}
+
+#star-button-box{
+	display: none !important;
+}
+
+toolbaritem[overflowedItem="true"], .widget-overflow-list .toolbarbutton-1 {
+	max-width: 75em !important;
+}
+
+
+/* panelview for extensions*/
+#widget-overflow-mainView{
+	min-width: 75em !important;
+}
+
+#customizationui-widget-multiview #appMenu-libraryView, #pageActionPanel panelview, #widget-overflow panelview {
+    min-width: 100em;
+}
+
+#PanelUI-menu-button{
+	padding: 0px !important;
+}
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-inline-start: 0px !important;
+}
+
+/* Move tabs 35% to rihgt */
+#TabsToolbar {
+	margin-left: 35vw !important;
+}
+
+/* Move navigation 65% to left and negative margin to move to top line */
+#nav-bar {
+	margin-right: 65vw !important;
+	margin-top: calc(0px - var(--tab-min-height)) !important;
+	background: transparent !important;
+	border-inline: var(--uc-window-drag-space-width,0px) solid var(--toolbar-bgcolor);
+	border-inline-style: solid !important;
+	border-right-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px));
+}
+
+#nav-bar[urlbar-exceeds-toolbar-bounds="true"] {
+	padding-right: 55vw !important;
+}
+
+
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+  :root{ --uc-window-control-width: 72px; }
+  :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
+    border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) var(--uc-window-drag-space-width,0px)
+  }
+}
