@@ -3,7 +3,7 @@ Make Firefox compact with this theme!
 
 ## Screenshots
 
-![preview](https://user-images.githubusercontent.com/19305293/112073046-81cb0d00-8b73-11eb-9225-57cc2f7403b7.png)
+![preview](https://raw.githubusercontent.com/Dini108/firefox_compact_style/master/previews/preview.jpg)
 
 ## Installation
 
