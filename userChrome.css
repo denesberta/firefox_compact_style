@@ -169,21 +169,27 @@ toolbaritem[overflowedItem="true"], .widget-overflow-list .toolbarbutton-1 {
 /* Move navigation 65% to left and negative margin to move to top line */
 #nav-bar {
 	margin-right: 65vw !important;
-	margin-top: calc(0px - var(--tab-min-height)) !important;
+	margin-top: calc(-4px - var(--tab-min-height)) !important;
 	background: transparent !important;
 	border-inline: var(--uc-window-drag-space-width,0px) solid var(--toolbar-bgcolor);
 	border-inline-style: solid !important;
 	border-right-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px));
 }
 
+
+
 #nav-bar[urlbar-exceeds-toolbar-bounds="true"] {
 	padding-right: 55vw !important;
 }
 
+:root[uidensity=compact] {
+  --tab-min-height: 25px !important;
+}
 
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
   :root{ --uc-window-control-width: 72px; }
   :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
     border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) var(--uc-window-drag-space-width,0px)
   }
+  
 }
