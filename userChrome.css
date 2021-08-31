@@ -1,24 +1,24 @@
 
 /* Removes empty square on the left side of the tabs */
 #TabsToolbar .titlebar-spacer[type="pre-tabs"], .titlebar-spacer[type="post-tabs"]{
-	display: none !important; 
-} 
+	display: none !important;
+}
 
 /* Rouned Tabs */
 .tab-background,
 .tab-loading-burst {
-border: none !important;
-border-top-left-radius: 5px !important;
-border-top-right-radius: 5px !important;
+	border: none !important;
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
 }
 
 /* Removes lines on selected/hovered tabs */
 .tab-line { display: none !important; }
 
 /* Removes line in between tabs */
-.tabbrowser-tab::before, 
+.tabbrowser-tab::before,
 .tabbrowser-tab::after{
-  display: none !important;
+	display: none !important;
 }
 
 /* Rounded URL-bar */
@@ -40,11 +40,12 @@ border-top-right-radius: 5px !important;
 }
 
 #PopupAutoCompleteRichResult .autocomplete-richlistbox {
-  width:10% !important; /* for ESR52, not Quantum */
+	width:10% !important; /* for ESR52, not Quantum */
 }
 
 /* Context buttons */
 :root{
+	--tab-block-margin: 2px !important;
 	--proton-tab-block-margin: 0px !important;
 }
 
@@ -150,7 +151,7 @@ toolbaritem[overflowedItem="true"], .widget-overflow-list .toolbarbutton-1 {
 }
 
 #customizationui-widget-multiview #appMenu-libraryView, #pageActionPanel panelview, #widget-overflow panelview {
-    min-width: 100em !important;
+	min-width: 100em !important;
 }
 
 #PanelUI-menu-button{
@@ -158,7 +159,7 @@ toolbaritem[overflowedItem="true"], .widget-overflow-list .toolbarbutton-1 {
 }
 
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
-    margin-inline-start: 0px !important;
+	margin-inline-start: 0px !important;
 }
 
 /* Move tabs 35% to rihgt */
@@ -183,13 +184,14 @@ toolbaritem[overflowedItem="true"], .widget-overflow-list .toolbarbutton-1 {
 }
 
 :root[uidensity=compact] {
-  --tab-min-height: 25px !important;
+	--focus-outline-width: 0px;
+	--tab-min-height: 25px !important;
 }
 
 @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root{ --uc-window-control-width: 72px; }
-  :root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
-    border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) var(--uc-window-drag-space-width,0px)
-  }
-  
+	:root{ --uc-window-control-width: 72px; }
+	:root[tabsintitlebar="true"]:not([inFullscreen]) #nav-bar{
+		border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-width,0px)) var(--uc-window-drag-space-width,0px)
+	}
+
 }
